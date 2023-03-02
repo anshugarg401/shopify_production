@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from "next/link";
 
-const Order = ({total}) => {
+const Order = () => {
     return (
       <div>
           <section className="text-gray-600 body-font overflow-hidden">
@@ -33,7 +33,7 @@ const Order = ({total}) => {
             <span className="ml-auto text-gray-900">1</span>
           </div>
           <div className="flex flex-col">
-          <div className="text-xl font-medium title-font m-2 text-gray-900"> <p>subtotal: {total}</p> </div>
+          <div className="text-xl font-medium title-font m-2 text-gray-900"> <p>subtotal: </p> </div>
              
               <Link href={'/'}><button className="flex mt-2 m-auto  text-white bg-tahiti-200 border-0  py-1 px-2 focus:outline-none hover:bg-tahiti-300 rounded text-lg"> track order</button></Link>
               
