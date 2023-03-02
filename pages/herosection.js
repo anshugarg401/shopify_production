@@ -1,5 +1,5 @@
 import React from 'react';
-import Slideshow from '../components/slideshow';
+import Slideshow from '../components/Slideshow';
 
 
 const Herosection = () => {
