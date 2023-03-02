@@ -33,7 +33,7 @@ const Order = ({total}) => {
             <span className="ml-auto text-gray-900">1</span>
           </div>
           <div className="flex flex-col">
-          <div className="text-xl font-medium title-font m-2 text-gray-900"><h3>subtotal:</h3>  {total}</div>
+          <div className="text-xl font-medium title-font m-2 text-gray-900"><span>subtotal:</span>  {total}</div>
              
               <Link href={'/'}><button className="flex mt-2 m-auto  text-white bg-tahiti-200 border-0  py-1 px-2 focus:outline-none hover:bg-tahiti-300 rounded text-lg"> track order</button></Link>
               
