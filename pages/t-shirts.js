@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import product from "./models/product"
+import product from "./../models/product"
 const mongoose = require('mongoose');
 const Tshirts = ({products}) => {
   
