@@ -1,4 +1,4 @@
-import product from "../models/product";
+import product from "../../models/product";
 import connectDb from "../../middleware/mongoose";
 
 const handler = async (req, res) => {
