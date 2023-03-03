@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
 import { useState,useEffect } from 'react'
-import product from '../models/product'
+import product from '../../models/product'
 import mongoose from 'mongoose'
 
 
