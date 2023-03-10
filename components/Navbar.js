@@ -10,19 +10,6 @@ const Navbar = ({addtocart,removefromcart, cart, total, clearcart}) => {
  
   const ref = useRef();
 
-  const togglecart = () => {
-
-    if (ref.current.classList.contains("translate-x-full")) {
-      ref.current.classList.remove("translate-x-full");
-      ref.current.classList.add("translate-x-0");
-    } else if (!ref.current.classList.contains("translate-x-full")) {
-      ref.current.classList.remove("translate-x-0");
-      ref.current.classList.add("translate-x-full");
-    }
-    
-    
-  };
-
   
   return (
     <div className="sticky top-0 z-9000">
@@ -65,13 +52,13 @@ const Navbar = ({addtocart,removefromcart, cart, total, clearcart}) => {
             </Link>
           </ul>
 
-          <div className="cart absolute right-0 mx-5 ">
+          <button className="cart absolute right-0 mx-5 peer">
             <TiShoppingCart
-              className=" m-1 text-xl md:text-3xl cursor-pointer "
-              onClick={togglecart}
+              className=" m-1 text-xl md:text-3xl cursor-pointer"
+              // onClick={togglecart}
             />
             
-          </div>
+          </button>
           <Link href={"/login"} legacyBehavior><div className="cart absolute right-12 mx-5">
           <CgProfile
               className=" m-1 text-xl md:text-3xl cursor-pointer "
@@ -82,12 +69,12 @@ const Navbar = ({addtocart,removefromcart, cart, total, clearcart}) => {
           
           <div
             ref={ref}
-            className=" sidecart absolute rounded-md shadow-md w-64 h-[100vh] top-0 right-0  p-5 colour bg-tahiti-100 z-10 transition-transform translate-x-full"
+            className=" sidecart absolute rounded-md shadow-md w-64 h-[100vh] top-0 -right-64  p-5 colour bg-tahiti-100 z-10 peer-focus:right-0 peer:transition ease-out delay-150 duration-200"
           >
             <h2 className="font-bold text-xl text-center">Shopify Cart</h2>
             <span
-              className="cross absolute top-0 right-0 m-2 cursor-pointer text-tahiti-200"
-              onClick={togglecart}
+              className="cross absolute top-0 right-0 m-2 cursor-pointer text-tahiti-200 peer"
+              // onClick={togglecart}
             >
               <AiFillCloseCircle />
             </span>
