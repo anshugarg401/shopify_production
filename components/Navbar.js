@@ -73,7 +73,7 @@ const Navbar = ({addtocart,removefromcart, cart, total, clearcart}) => {
           >
             <h2 className="font-bold text-xl text-center">Shopify Cart</h2>
             <span
-              className="cross absolute top-0 right-0 m-2 cursor-pointer text-tahiti-200 peer"
+              className="cross absolute top-0 right-0 m-2 cursor-pointer text-tahiti-200"
               // onClick={togglecart}
             >
               <AiFillCloseCircle />
