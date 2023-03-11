@@ -30,12 +30,12 @@ const Navbar = ({addtocart,removefromcart, cart, total, clearcart}) => {
    const collapseIconClasses = classNames(
     "sidecart absolute rounded-md shadow-md h-[100vh] top-0 right-0  p-5 colour bg-tahiti-100 z-10 ",
     {
-      "bg-indigo-700 text-zinc-50 z-20": true,
         "transition-all duration-200 ease-in-out": true,
         "fixed static translate-x-0":true,
         "w-64":!Collapse,
         "w-0":Collapse,
-        "translate-x-12":Collapse
+        "translate-x-12":Collapse,
+        
       
     }
   );
