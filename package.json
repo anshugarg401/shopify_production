@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "classnames": "^2.3.2",
     "dotenv": "^16.0.1",
     "icons": "^1.0.0",
     "mongoose": "^6.5.2",

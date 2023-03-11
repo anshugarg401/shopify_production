@@ -1,14 +1,44 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useState} from "react";
+import classNames from "classnames";
 import { TiShoppingCart } from "react-icons/ti";
 import { AiFillCloseCircle,AiFillMinusCircle,AiFillPlusCircle,AiFillShopping} from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { useRef } from "react";
 
 const Navbar = ({addtocart,removefromcart, cart, total, clearcart}) => {
- 
+  const [Collapse, setCollapse] = useState(true);
   const ref = useRef();
+  const togglecart = () => {
+
+    if (Collapse === true) {
+      
+      setCollapse(false);
+      
+      
+    } else if (Collapse === false) {
+      setCollapse(true);
+     
+      
+     
+    }
+
+
+  };
+   const collapseIconClasses = classNames(
+    "sidecart absolute rounded-md shadow-md h-[100vh] top-0 right-0  p-5 colour bg-tahiti-100 z-10 ",
+    {
+      "bg-indigo-700 text-zinc-50 z-20": true,
+        "transition-all duration-200 ease-in-out": true,
+        "fixed static translate-x-0":true,
+        "w-64":!Collapse,
+        "w-0":Collapse,
+        "translate-x-12":Collapse
+      
+    }
+  );
 
   
   return (
@@ -52,13 +82,12 @@ const Navbar = ({addtocart,removefromcart, cart, total, clearcart}) => {
             </Link>
           </ul>
 
-          <button className="cart absolute right-0 mx-5 peer">
+          <div className="cart absolute right-0 mx-5 ">
             <TiShoppingCart
-              className=" m-1 text-xl md:text-3xl cursor-pointer"
-              // onClick={togglecart}
+              className=" m-1 text-xl md:text-3xl cursor-pointer "
+              onClick={togglecart}
             />
-            
-          </button>
+            </div>
           <Link href={"/login"} legacyBehavior><div className="cart absolute right-12 mx-5">
           <CgProfile
               className=" m-1 text-xl md:text-3xl cursor-pointer "
@@ -69,12 +98,12 @@ const Navbar = ({addtocart,removefromcart, cart, total, clearcart}) => {
           
           <div
             ref={ref}
-            className=" sidecart absolute rounded-md shadow-md w-64 h-[100vh] top-0 -right-64  p-5 colour bg-tahiti-100 z-10 peer-focus:right-0 peer:transition ease-out delay-150 duration-200"
+            className= {collapseIconClasses}
           >
             <h2 className="font-bold text-xl text-center">Shopify Cart</h2>
             <span
               className="cross absolute top-0 right-0 m-2 cursor-pointer text-tahiti-200"
-              // onClick={togglecart}
+              onClick={togglecart}
             >
               <AiFillCloseCircle />
             </span>
@@ -106,7 +135,7 @@ const Navbar = ({addtocart,removefromcart, cart, total, clearcart}) => {
             </ol>
             <div className="text-lg font-medium title-font m-2 text-gray-900">Subtotal: {total}</div>
             <div className="flex flex-wrap">
-            <Link href={'/checkout'}><button className="grow w-15  mt-4 mx-1  text-white bg-tahiti-200 border-0  py-2 px-1 focus:outline-none hover:bg-tahiti-300 rounded text-lg"><AiFillShopping className=" grow inline-block flex-wrap ml-0 "/> checkout</button></Link>
+            <Link href={'/checkout'}><button className="grow w-13  mt-4 mx-1  text-white bg-tahiti-200 border-0  py-2 px-1 focus:outline-none hover:bg-tahiti-300 rounded text-lg"><AiFillShopping className=" grow inline-block flex-wrap ml-0 "/> checkout</button></Link>
             <button onClick={()=>{clearcart()}} className="grow w-13 mt-4 mx-1 text-white bg-tahiti-200 border-0  px-1 focus:outline-none hover:bg-tahiti-300 rounded text-lg">clear cart</button>
             </div>
             
