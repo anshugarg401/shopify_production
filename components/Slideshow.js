@@ -5,9 +5,9 @@ import 'react-slideshow-image/dist/styles.css';
 const Slideshow = () => {
 
   const images = [
-    "\andrew-s-ouo1hbizWwo-unsplash.jpg",
-    "\pexels-simona-kidrič-2607544.jpg",
-    "\matthew-henry-2Ts5HnA67k8-unsplash.jpg",
+    "\charlota-blunarova-r5xHI_H44aM-unsplash.jpg",
+    "\marissa-grootes-D4jRahaUaIc-unsplash.jpg",
+    "\mukuko-studio-mU88MlEFcoU-unsplash.jpg",
 ];
 const buttonStyle = {
   width: "30px",

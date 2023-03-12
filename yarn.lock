@@ -994,6 +994,16 @@
     "escape-string-regexp" "^4.0.0"
     "rollup-plugin-node-polyfills" "^0.2.1"
 
+"@esbuild/win32-ia32@0.16.17":
+  "integrity" "sha512-WnsKaf46uSSF/sZhwnqE4L/F89AYNMiD4YtEcYekBt9Q7nj0DiId2XH2Ng2PHM54qi5oPrQ8luuzGszqi/veig=="
+  "resolved" "https://registry.npmjs.org/@esbuild/win32-ia32/-/win32-ia32-0.16.17.tgz"
+  "version" "0.16.17"
+
+"@esbuild/win32-ia32@0.16.3":
+  "integrity" "sha512-GlgVq1WpvOEhNioh74TKelwla9KDuAaLZrdxuuUgsP2vayxeLgVc+rbpIv0IYF4+tlIzq2vRhofV+KGLD+37EQ=="
+  "resolved" "https://registry.npmjs.org/@esbuild/win32-ia32/-/win32-ia32-0.16.3.tgz"
+  "version" "0.16.3"
+
 "@esbuild/win32-x64@0.16.17":
   "integrity" "sha512-y+EHuSchhL7FjHgvQL/0fnnFmO4T1bhvWANX6gcnqTjtnKWbTvUMCpGnv2+t+31d7RzyEAYAd4u2fnIhHL6N/Q=="
   "resolved" "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.16.17.tgz"
@@ -1112,6 +1122,11 @@
   "version" "12.2.3"
   dependencies:
     "glob" "7.1.7"
+
+"@next/swc-win32-ia32-msvc@13.2.3":
+  "integrity" "sha512-LzWD5pTSipUXTEMRjtxES/NBYktuZdo7xExJqGDMnZU8WOI+v9mQzsmQgZS/q02eIv78JOCSemqVVKZBGCgUvA=="
+  "resolved" "https://registry.npmjs.org/@next/swc-win32-ia32-msvc/-/swc-win32-ia32-msvc-13.2.3.tgz"
+  "version" "13.2.3"
 
 "@next/swc-win32-x64-msvc@13.2.3":
   "integrity" "sha512-aLG2MaFs4y7IwaMTosz2r4mVbqRyCnMoFqOcmfTi7/mAS+G4IMH0vJp4oLdbshqiVoiVuKrAfqtXj55/m7Qu1Q=="
@@ -2724,6 +2739,11 @@
     "is-callable" "^1.1.4"
     "is-date-object" "^1.0.1"
     "is-symbol" "^1.0.2"
+
+"esbuild-windows-32@0.14.47":
+  "integrity" "sha512-H0fWsLTp2WBfKLBgwYT4OTfFly4Im/8B5f3ojDv1Kx//kiubVY0IQunP2Koc/fr/0wI7hj3IiBDbSrmKlrNgLQ=="
+  "resolved" "https://registry.npmjs.org/esbuild-windows-32/-/esbuild-windows-32-0.14.47.tgz"
+  "version" "0.14.47"
 
 "esbuild-windows-64@0.14.47":
   "integrity" "sha512-/Pk5jIEH34T68r8PweKRi77W49KwanZ8X6lr3vDAtOlH5EumPE4pBHqkCUdELanvsT14yMXLQ/C/8XPi1pAtkQ=="
