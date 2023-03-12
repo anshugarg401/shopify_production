@@ -6,7 +6,7 @@ const Slideshow = () => {
 
   const images = [
     "\axwell-wallet-TBTMYnlb7SM-unsplash.jpg",
-    "\nimble-made-NS2BZsGxOLE-unsplash.jpg",
+    "\charlota-blunarova-r5xHI_H44aM-unsplash.jpg",
     "\waldemar-cue0DuZ8cUU-unsplash.jpg",
 ];
 const buttonStyle = {
