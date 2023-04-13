@@ -64,10 +64,11 @@ function MyApp({ Component, pageProps }) {
     savecart({})
   }
   return <>
-  <div className = "overflow-hidden"></div>
+  <div className = "overflow-hidden">
   <Navbar  addtocart = {addtocart} removefromcart = {removefromcart} cart = {cart} total = {total} clearcart = {clearcart} />
   <Component  addtocart = {addtocart} removefromcart = {removefromcart} cart = {cart} total = {total} clearcart = {clearcart} {...pageProps} />
   <Footer/>
+  </div>
   </>
   
   
