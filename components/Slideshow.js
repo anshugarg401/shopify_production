@@ -1,45 +1,87 @@
-import React from 'react';
-import { Zoom } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css';
 
+import Image from "next/image";
+import { useState } from "react";
+import Swipe from "react-easy-swipe";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+
+/**
+ * Carousel component for nextJS and Tailwind.
+ * Using external library react-easy-swipe for swipe gestures on mobile devices (optional)
+ *
+ * @param images - Array of images with src and alt attributes
+ * @returns React component
+ */
 const Slideshow = () => {
-
+  const [currentSlide, setCurrentSlide] = useState(0);
   const images = [
-    "\axwell-wallet-TBTMYnlb7SM-unsplash.jpg",
-    "\charlota-blunarova-r5xHI_H44aM-unsplash.jpg",
-    "\waldemar-cue0DuZ8cUU-unsplash.jpg",
-];
-const buttonStyle = {
-  width: "30px",
-  background: 'none',
-  border: '1px'
-};
+        "/freestocks-_3Q3tsJ01nc-unsplash.jpg",
+        "/lucrezia-carnelos-wQ9VuP_Njr4-unsplash.jpg",
+        "/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg",
+    ];
+  const handleNextSlide = () => {
+    let newSlide = currentSlide === images.length - 1 ? 0 : currentSlide + 1;
+    setCurrentSlide(newSlide);
+  };
 
-const properties = {
-  prevArrow: <button style={{ ...buttonStyle }}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#fff"><path d="M242 180.6v-138L0 256l242 213.4V331.2h270V180.6z"/></svg></button>,
-  nextArrow: <button style={{ ...buttonStyle }}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#fff"><path d="M512 256L270 42.6v138.2H0v150.6h270v138z"/></svg></button>
+  const handlePrevSlide = () => {
+    let newSlide = currentSlide === 0 ? images.length - 1 : currentSlide - 1;
+    setCurrentSlide(newSlide);
+  };
+
+  return (
+    <div className="relative">
+      <AiOutlineLeft
+        onClick={handlePrevSlide}
+        className="absolute left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
+      />
+      <div className="w-full h-[60vh] flex overflow-hidden relative m-auto">
+        <Swipe
+          onSwipeLeft={handleNextSlide}
+          onSwipeRight={handlePrevSlide}
+          className="relative z-10 w-full h-full"
+        >
+          {images.map((image, index) => {
+            if (index === currentSlide) {
+              return (
+                <img key={image.id} className = "  object-fill shadow-lg h-full w-screen -z-1"  alt="Slide Image" src={image} />
+                // <Image
+                //   key={image.id}
+                //   src={image}
+                //   layout="fill"
+                //   objectFit="contain"
+                //   className="object-fill shadow-lg h-200 w-screen -z-1 animate-fadeIn"
+                //   alt = "image"
+                // />
+              );
+            }
+          })}
+        </Swipe>
+      </div>
+      <AiOutlineRight
+        onClick={handleNextSlide}
+        className="absolute right-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
+      />
+
+      <div className="relative flex justify-center p-2">
+        {images.map((_, index) => {
+          return (
+            <div
+              className={
+                index === currentSlide
+                  ? "h-4 w-4 bg-gray-700 rounded-full mx-2 mb-2 cursor-pointer"
+                  : "h-4 w-4 bg-gray-300 rounded-full mx-2 mb-2 cursor-pointer"
+              }
+              key={index}
+              onClick={() => {
+                setCurrentSlide(index);
+              }}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
 }
-    
-    return (
-        <>
-            <Zoom {...properties} indicators={true} scale = {1.4} >
-              {images.map((each, index) => {        
-                return(
-                  
-                    <img key={index} className = "  object-fill shadow-lg h-400 w-screen -z-1"  alt="Slide Image" src={each} />
-              
 
-                )
-                
-              })}
-                
-            </Zoom>
-            
-        </>
-    );
-};
 
 export default Slideshow;
-
-
-
